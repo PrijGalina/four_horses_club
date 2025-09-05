@@ -9,7 +9,7 @@
   <body>
     <header class="header">
       <div class="container header__inner">
-        <a href="#top" class="logo" aria-label="На главную">
+        <a href="#" class="logo" aria-label="На главную">
           <img src="./assets/img/logo.svg" alt="Шахматный клуб 'Клуб Четырех Коней'">
         </a>
       </div>
@@ -18,22 +18,29 @@
       <section id="hero" class="hero" aria-labelledby="hero-title">
         <div class="container hero__inner">
           <h1 class="hero__title">
-            Превратите<br/> уездный город<br/> в столицу<br/> земного шара
+            <span class="hero__line">Превратите</span>
+            <span class="hero__line">уездный город</span>
+            <span class="hero__line">в столицу</span>
+            <span class="hero__line">земного шара</span>
           </h1>
           <p class="hero__subtitle">
             Оплатите взнос на телеграммы для организации<br/> Международного васюкинского турнира по шахматам
           </p>
           <div class="hero__actions">
-            <a href="#participants" class="btn">К участникам</a>
-            <a href="#stages" class="btn btn--ghost">К этапам</a>
+            <a href="#participants" class="btn">Поддержать шахматную мысль</a>
+            <a href="#stages" class="btn btn--inversion">Подробнее о турнире</a>
           </div>
         </div>
       </section>
-      <section id="ticker-top">
-        <span>Дело помощи утопающим — дело рук самих утопающих!</span>
-        <span>Шахматы двигают вперед не только культуру, но и экономику!</span>
-        <span>Лед тронулся, господа присяжные заседатели!</span>
-      </section>
+      <section id="ticker-top" class="ticker">
+        <div class="ticker__track">
+          <div class="ticker__group">
+            <span class="ticker__item">Дело помощи утопающим — дело рук самих утопающих!</span>
+            <span class="ticker__item">Шахматы двигают вперед не только культуру, но и экономику!</span>
+            <span class="ticker__item">Лед тронулся, господа присяжные заседатели!</span>
+          </div>
+        </div>
+      </section>        
       <section id="announcement" class="announcement" aria-labelledby="announcement-title">
         <div class="container announcement__inner">
           <h2 id="announcement-title" class="announcement__title visually-hidden">
@@ -41,16 +48,74 @@
           </h2>
           <div class="announcement__poster">
             <div class="announcement__row announcement__row--top">
-              <div class="announcement__text announcement__text--top">Текст</div>
-              <div class="announcement__image announcement__image--top">Картинка</div>
+              <div class="announcement__text announcement__text--top">
+                Чтобы поддержать<br/> Международный васюкинский турнир посетите лекцию на тему:
+                <span class="announcement__highlight">
+                  «Плодотворная дебютная идея»
+                </span>
+              </div>
+              <div class="announcement__image announcement__image--top">
+                <picture class="announcement__photo" aria-hidden="true">
+                  <source srcset="./assets/img/announcement/394@2x.webp 2x, ./assets/img/announcement/394.webp 1x" type="image/webp">
+                  <img src="./assets/img/announcement/394.png" srcset="./assets/img/announcement/394@2x.png 2x" alt="" loading="lazy" decoding="async">
+                </picture>
+              </div>
             </div>
         
             <div class="announcement__row announcement__row--bottom">
-              <div class="announcement__image announcement__image--bottom">Картинка</div>
+              <div class="announcement__image announcement__image--bottom">
+                <picture class="announcement__photo" aria-hidden="true">
+                  <source srcset="./assets/img/announcement/530@2x.webp 2x, ./assets/img/announcement/530.webp 1x" type="image/webp">
+                  <img src="./assets/img/announcement/530.png" srcset="./assets/img/announcement/530@2x.png 2x" alt="" loading="lazy" decoding="async">
+                </picture>
+              </div>
               <div class="announcement__block">
-                <div class="announcement__block-text">Текст</div>
-                <div class="announcement__block-info">Таблица</div>
-                <div class="announcement__block-note">Текст</div>
+                <div class="announcement__block-text announcement__text announcement__text--bottom">
+                  и Сеанс
+                  <span class="announcement__highlight">
+                    одновременной игры
+                  </span>
+                  <span class="announcement__highlight">
+                    в шахматы на 160 досках
+                  </span>
+                  гроссмейстера О. Бендера
+                </div>
+                <div class="announcement__block-info">
+                  <table class="info-table">
+                    <tbody class="info-table__body">
+                      <tr class="info-table__row">
+                        <td class="info-table__cell info-table__cell--label">Место проведения:</td>
+                        <td class="info-table__cell info-table__cell--value">Клуб «Картонжник»</td>
+                      </tr>
+                
+                      <tr class="info-table__row">
+                        <td class="info-table__cell info-table__cell--label">Дата и время мероприятия:</td>
+                        <td class="info-table__cell info-table__cell--value info-table__cell--strong">
+                          22 июня 1927 г. в 18:00
+                        </td>
+                      </tr>
+                
+                      <tr class="info-table__row">
+                        <td class="info-table__cell info-table__cell--label">Стоимость входных билетов:</td>
+                        <td class="info-table__cell info-table__cell--value info-table__cell--strong">20 коп.</td>
+                      </tr>
+                
+                      <tr class="info-table__row">
+                        <td class="info-table__cell info-table__cell--label">Плата за игру:</td>
+                        <td class="info-table__cell info-table__cell--value info-table__cell--strong">50 коп.</td>
+                      </tr>
+                
+                      <tr class="info-table__row">
+                        <td class="info-table__cell info-table__cell--label">Взнос на телеграммы:</td>
+                        <td class="info-table__cell info-table__cell--value">
+                          <span class="info-table__old">100 руб.</span>
+                          <span class="info-table__new info-table__cell--strong">21 руб. 16 коп.</span>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>                
+                </div>
+                <div class="announcement__block-note">По всем вопросам обращаться в администрацию к К. Михельсону</div>
               </div>
             </div>
           </div>
@@ -173,10 +238,14 @@
           </ul>
         </div>
       </section>
-      <section id="ticker-bottom">
-        <span>Дело помощи утопающим — дело рук самих утопающих!</span>
-        <span>Шахматы двигают вперед не только культуру, но и экономику!</span>
-        <span>Лед тронулся, господа присяжные заседатели!</span>
+      <section id="ticker-bottom" class="ticker">
+        <div class="ticker__track">
+          <div class="ticker__group">
+            <span class="ticker__item">Дело помощи утопающим — дело рук самих утопающих!</span>
+            <span class="ticker__item">Шахматы двигают вперед не только культуру, но и экономику!</span>
+            <span class="ticker__item">Лед тронулся, господа присяжные заседатели!</span>
+          </div>
+        </div>
       </section>
     </main>
     <footer class="footer">

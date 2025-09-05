@@ -2,7 +2,7 @@
   font-family: 'Merriweather';
   src: url('./assets/fonts/Merriweather/Merriweather.woff2') format('woff2'),
        url('./assets/fonts/Merriweather/Merriweather.woff') format('woff');
-  font-weight: 400;
+  font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
@@ -16,6 +16,319 @@
   font-display: swap;
 }
 
+:root {
+  --text-color-main: #313131;
+  --btn-bg-main: #1F1F1F;
+  --color-red: #F54932;
+  --color-yellow: #FBCE51;
+  --color-blue: #3057A2;
+  --color-border: #D0D0D0;
+}
+
 body {
+  margin: 0;
   font-family: 'GolosText', sans-serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 1222px;
+  margin-inline: auto;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.logo {
+  position: absolute;
+  top: 26px;
+  margin-left: 7px;
+}
+
+.hero__inner {
+  padding-top: 124px;
+  padding-left: 21px;
+}
+
+.hero {
+  min-height: 700px;
+  color: var(--text-color-main);
+  background-color: #efe6db;
+  background-image: image-set(
+    url("./assets/img/hero/1920.webp") type("image/webp") 1x,
+    url("./assets/img/hero/1920@2x.webp") type("image/webp") 2x,
+    url("./assets/img/hero/1920.jpg") type("image/jpeg") 1x,
+    url("./assets/img/hero/1920@2x.jpg") type("image/jpeg") 2x
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+}
+
+.hero__title {
+  font-family: 'Merriweather', sans-serif;
+  font-size: clamp(36px, 4.39vw, 60px);
+  line-height: 110%;
+  text-transform: uppercase;
+  margin: 0;
+  letter-spacing: 2.7px;
+}
+
+.hero__line {
+  display: block;
+  max-width: 544px;
+}
+
+.hero__line:first-child,
+.hero__line:nth-child(2) {
+  text-align: left;
+}
+
+.hero__line:nth-child(3),
+.hero__line:last-child {
+  text-align: center;
+}
+
+.hero__line:last-child {
+  padding-left: 14px;
+}
+
+.hero__subtitle {
+  margin: 25px 0;
+  max-width: 535px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.hero__actions {
+  display: flex;
+  margin-top: 41px;
+  margin-left: -5px;
+}
+
+.btn {
+  display: block;
+  padding: 14px 50px;
+  border: 2px solid var(--btn-bg-main);
+  border-radius: 66px;
+  max-width: 161px;
+  text-align: center;
+  text-decoration: none;
+  background-color: var(--btn-bg-main);
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 130%;
+}
+
+.btn:hover {
+  color: var(--btn-bg-main);
+  background: var(--color-yellow);
+  border: 2px solid var(--color-yellow);
+}
+
+.btn:first-child {
+  margin-right: 15px;
+}
+
+.btn--inversion {
+  background-color: transparent;
+  color: var(--btn-bg-main);
+}
+
+.btn--inversion:hover {
+  border: 2px solid var(--btn-bg-main);
+  background-color: var(--btn-bg-main);
+  color: white;
+}
+
+.ticker {
+  background: var(--color-red);
+  color: #fff;
+  overflow: hidden;
+  white-space: nowrap;
+  font-family: 'Merriweather', sans-serif;
+  font-size: 22px;
+  text-transform: uppercase;
+}
+
+.ticker__track {
+  display: flex;
+  width: max-content;
+  animation: marquee 25s linear infinite;
+  will-change: transform;
+  animation-delay: -3s;
+}
+
+.ticker__group {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.ticker__item {
+  position: relative;
+  padding: 16px 12px 16px 18px;
+}
+
+.ticker__item::before {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.announcement__inner {
+  margin-top: 72px;
+}
+
+.announcement__text {
+  font-family: 'Merriweather', sans-serif;
+  font-size: 37px;
+  line-height: 130%;
+  color: var(--text-color-main);
+  text-transform: uppercase;
+}
+
+.announcement__text--top {
+  margin-left: 18px;
+}
+
+.announcement__image--top {
+  margin-left: 19px;
+}
+
+.announcement__highlight{
+  color: var(--color-red);
+  font-weight: 600;
+} 
+
+.announcement__poster {
+  display: grid;
+  grid-template-rows: auto auto;
+  gap: 68px;
+}
+
+.announcement__row--top {
+  display: grid;
+  grid-template-columns: 764px 394px;
+  gap: 64px;
+  align-items: center;
+}
+
+.announcement__row--bottom{
+  display: grid;
+  grid-template-columns: 474px 704px;
+  gap: 51px;
+}
+
+.announcement__block {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  gap: 17px;
+}
+
+.announcement__image--bottom {
+  margin-top: -27px;
+  margin-left: -21px
+}
+
+.info-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--text-color-main);
+  max-width: 704px;
+  margin-top: 12px;
+}
+
+.info-table__row {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.info-table__row:last-child {
+  border-bottom: none;
+}
+
+.info-table__cell {
+  padding: 16px;
+  vertical-align: middle;
+  font-size: 20px;
+  line-height: 120%;
+}
+
+.info-table__cell--label {
+  opacity: 0.7;
+  border-right: 1px solid var(--color-border);
+  width: 306px;
+  padding: 16px 16px 16px 0px;
+  box-sizing: border-box;
+}
+
+.info-table__cell--value {
+  font-weight: 400;
+}
+
+.info-table__cell--strong {
+  font-weight: 700;
+}
+
+.info-table__old {
+  margin-right: 10px;
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+  text-decoration-color: var(--color-red);
+}
+
+.announcement__block-note {
+  color: var(--color-blue);
+  font-size: 20px;
+  line-height: 120%;
+}
+
+@media (max-width: 1366px) {
+  .hero{
+    background-image: image-set(
+      url("./assets/img/hero/1366.webp") type("image/webp") 1x,
+      url("./assets/img/hero/1366@2x.webp") type("image/webp") 2x,
+      url("./assets/img/hero/1366.jpg") type("image/jpeg") 1x,
+      url("./assets/img/hero/1366@2x.jpg") type("image/jpeg") 2x
+    );
+    min-height: 700px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    max-width: 336px;
+  }
+
+  .hero {
+    min-height: 812px;
+    background-image: image-set(
+      url("./assets/img/hero/375.webp") type("image/webp") 1x,
+      url("./assets/img/hero/375@2x.webp") type("image/webp") 2x,
+      url("./assets/img/hero/375.jpg") type("image/jpeg") 1x,
+      url("./assets/img/hero/375@2x.jpg") type("image/jpeg") 2x
+    );
+  }
 }
